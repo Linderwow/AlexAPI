@@ -82,7 +82,6 @@ public class SpartanGetRequests {
 
         Response response = RestAssured.when().get(url + "/api/hello");
 
-        response.prettyPrint();
 
         //verify status code
         Assertions.assertEquals(200,response.statusCode());
