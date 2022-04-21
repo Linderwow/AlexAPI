@@ -54,7 +54,17 @@ public class HRApiWithJsonPath extends HrTestBase {
         System.out.println(emailList);
 
         //get me first name of employees who is making more than 10000
+        List<String> nameList = jsonPath.getList("items.findAll {it.salary>10000}.first_name");
 
+        System.out.println(nameList);
+
+        //get me the first name of who is making the highest salary
+        String maxFirstName = jsonPath.getString("items.max {it.salary}.first_name");
+        String minFirstName = jsonPath.getString("items.min {it.salary}.first_name");
+        System.out.println(maxFirstName);
+        System.out.println(minFirstName);
+
+        System.out.println(response.path("items.max {it.salary}.first_name").toString());
     }
 }
 
