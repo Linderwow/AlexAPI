@@ -3,6 +3,7 @@ package com.cydeo.day3;
 import com.cydeo.utilities.HrTestBase;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -34,5 +35,26 @@ public class HRApiWithJsonPath extends HrTestBase {
         }
 
         //get me all country names where their region id is 2
+        List<Object> countryListWithID2 = jsonPath.getList("items.findAll {it.region_id==2}.country_id");
+        System.out.println(countryListWithID2);
+    }
+
+    @DisplayName("GET request to /employees with param")
+    @Test
+    public void test2(){
+
+        Response response = given().queryParam("limit", 150)
+                .when().get("/employees");
+
+        //get jsonpath object
+        JsonPath jsonPath = response.jsonPath();
+
+        //get me all emails who is working as IT_PROG
+        List<String> emailList = jsonPath.getList("items.findAll {it.job_id==\"IT_PROG\"}.email");
+        System.out.println(emailList);
+
+        //get me first name of employees who is making more than 10000
+
     }
 }
+
