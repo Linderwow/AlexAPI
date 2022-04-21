@@ -50,6 +50,9 @@ public class HRApiTestsWithParams extends HrTestBase {
 
 
     }
-
+       /*
+        HW
+             Send a GET request to employees and get only employees who works as a IT_PROG
+         */
 
 }
