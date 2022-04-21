@@ -38,7 +38,7 @@ public class SpartanTestWithJsonPath extends SpartanTestBase {
         //print the name
         System.out.println(response.path("name").toString());
 
-        //print the name
+        //save jsonpath object from response
         JsonPath jsonPath = response.jsonPath();
 
         String name = jsonPath.getString("name");
