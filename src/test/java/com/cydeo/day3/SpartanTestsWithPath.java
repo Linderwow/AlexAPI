@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -55,8 +57,32 @@ public class SpartanTestsWithPath extends SpartanTestBase {
         assertEquals(3312820936l,phone);
     }
 
+    @DisplayName("GET all spartan and navigate with Path()")
+    @Test
+    public void test2(){
 
+        Response response = given()
+                .accept(ContentType.JSON)
+                .when().get("/api/spartans");
 
+        int firstID = response.path("id[0]");
+        System.out.println("firstID = " + firstID);
+
+        String name = response.path("name[1]");
+        System.out.println("name = " + name);
+
+        String lastFirstName = response.path("name[-1]");
+        System.out.println(lastFirstName);
+
+        //how to get all names and store inside the list
+        List<String> names = response.path("name");
+        System.out.println(names);
+        //print names one by one
+        for (String s : names) {
+            System.out.println(s);
+        }
+
+    }
 
 
 
