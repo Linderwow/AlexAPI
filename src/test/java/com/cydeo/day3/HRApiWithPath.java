@@ -45,4 +45,9 @@ public class HRApiWithPath extends HrTestBase {
             assertEquals(2,regionsID);
         }
     }
+
+    /*
+        send a GET request o employees endpoint, filter only Job_id IT_PROG
+        then assert that all job_ids are IT_PROG
+     */
 }
