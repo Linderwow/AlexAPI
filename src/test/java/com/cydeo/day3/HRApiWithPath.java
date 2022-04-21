@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,6 +33,16 @@ public class HRApiWithPath extends HrTestBase {
         System.out.println(response.path("items[3].country_name").toString());
 
         //get me all country names
+        List<String> countryNames= response.path("items.country_name");
+        System.out.println(countryNames);
 
+        //assert that in the response all region_ids are 2
+        //save all the regions ids inside the list
+        List<Integer>  allRegionsIDs = response.path("items.region_id");
+
+        //assert one by one that they are equal to 2
+        for (Integer regionsID : allRegionsIDs) {
+            assertEquals(2,regionsID);
+        }
     }
 }
