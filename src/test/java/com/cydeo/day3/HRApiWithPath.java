@@ -50,4 +50,24 @@ public class HRApiWithPath extends HrTestBase {
         send a GET request o employees endpoint, filter only Job_id IT_PROG
         then assert that all job_ids are IT_PROG
      */
+    @DisplayName("GET request to /employees with Query Param")
+    @Test
+    public void test2(){
+        Response response = given()
+                                    .accept(ContentType.JSON)
+                                        .and().queryParam("q", "{\"job_id\":\"IT_PROG\"}")
+                            .when()
+                                    .get("/employees");
+
+        assertEquals(200,response.statusCode());
+
+        //assert all the jobsids are IT_PROG
+        List<String> allJobIDs = response.path("items.job_id");
+
+        //verify each of them is IT_PROG
+        for (String jobID : allJobIDs) {
+            assertEquals("IT_PROG",jobID);
+        }
+
+    }
 }
