@@ -48,8 +48,8 @@ public class JSONtoJAVATest extends SpartanTestBase {
         //we need to convert json to java which is deserialize
 
         List<Map<String,Object>> jsonList = response.as(List.class);
-
-        System.out.println(jsonList.get(15).get("gender"));
+        //51
+        System.out.println(jsonList.get(50).get("name"));
 
     }
 
