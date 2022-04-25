@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -38,6 +39,19 @@ public class JSONtoJAVATest extends SpartanTestBase {
         assertThat(name,is("Meta"));
     }
 
+    @DisplayName("GET all spartans to JAVA data structure")
+    @Test
+    public void getAllSpartan(){
+
+        Response response = get("/api/spartans").then().statusCode(200).extract().response();
+
+        //we need to convert json to java which is deserialize
+
+        List<Map<String,Object>> jsonList = response.as(List.class);
+
+        System.out.println(jsonList.get(15).get("gender"));
+
+    }
 
 
 }
