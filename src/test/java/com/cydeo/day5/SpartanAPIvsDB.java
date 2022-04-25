@@ -18,6 +18,8 @@ public class SpartanAPIvsDB extends SpartanTestBase {
     @DisplayName("Compare one spartan information api vs db")
     @Test
     public void test1(){
+
+
         //we need to get api information
         Response response = given().accept(ContentType.JSON)
                                  .pathParam("id", 15)
