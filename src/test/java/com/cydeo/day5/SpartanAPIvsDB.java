@@ -17,6 +17,7 @@ public class SpartanAPIvsDB extends SpartanTestBase {
     @DisplayName("Compare one spartan information api vs db")
     @Test
     public void test1(){
+        //we need to get api information
         Response response = given().accept(ContentType.JSON)
                                  .pathParam("id", 15)
                          .when()
@@ -28,6 +29,10 @@ public class SpartanAPIvsDB extends SpartanTestBase {
         Map<String,Object> apiMap = response.as(Map.class);
         System.out.println(apiMap.toString());
 
+        //we need to get information from database
+        //which db we will connect ?
+
+        //compare api vs db
 
     }
 }
