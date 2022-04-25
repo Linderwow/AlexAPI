@@ -1,5 +1,6 @@
 package com.cydeo.day5;
 
+import com.cydeo.utilities.DBUtils;
 import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -30,9 +31,20 @@ public class SpartanAPIvsDB extends SpartanTestBase {
         System.out.println(apiMap.toString());
 
         //we need to get information from database
-        //which db we will connect ?
+        //which db we will connect ? oracle so we added depedency
+        //we need connection String of spartan db
+        String query = "SELECT SPARTAN_ID,NAME,GENDER,PHONE\n" +
+                "FROM SPARTANS\n" +
+                "WHERE SPARTAN_ID = 15";
 
+        Map<String, Object> dbMap = DBUtils.getRowMap(query);
+
+        System.out.println(dbMap);
         //compare api vs db
+        assertThat(apiMap.get("id").toString(),is(dbMap.get("SPARTAN_ID").toString()));
+        assertThat(apiMap.get("name"),is(dbMap.get("NAME")));
+        assertThat(apiMap.get("gender"),is(dbMap.get("GENDER")));
+        assertThat(apiMap.get("phone").toString(),is(dbMap.get("PHONE").toString()));
 
     }
 }
