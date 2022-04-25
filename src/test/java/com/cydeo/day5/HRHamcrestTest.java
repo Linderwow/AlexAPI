@@ -64,8 +64,7 @@ public class HRHamcrestTest extends HrTestBase {
         //extract() --> method that allow us to get response object after we use then() method.
 
         //assert that we have only 5 firstnames
-        assertThat(jsonPath.getList("items.firstname"),hasSize(5));
-
+        assertThat(jsonPath.getList("items.first_name"),hasSize(5));
 
 
     }
