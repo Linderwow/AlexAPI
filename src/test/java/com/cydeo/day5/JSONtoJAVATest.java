@@ -32,7 +32,12 @@ public class JSONtoJAVATest extends SpartanTestBase {
 
         System.out.println(jsonMap);
 
+        String name = (String) jsonMap.get("name");
+        //verify name is Meta
 
+        assertThat(name,is("Meta"));
     }
+
+
 
 }
