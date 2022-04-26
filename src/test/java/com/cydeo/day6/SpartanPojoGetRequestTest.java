@@ -104,4 +104,6 @@ public class SpartanPojoGetRequestTest extends SpartanTestBase {
         System.out.println(content.get(1).getName());
     }
 
+
+
 }
