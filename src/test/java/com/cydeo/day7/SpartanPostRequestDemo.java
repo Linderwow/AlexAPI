@@ -166,6 +166,7 @@ public class SpartanPostRequestDemo extends SpartanTestBase {
                 .when().get("/api/spartans/{id}")
                 .then().statusCode(200).log().all().extract().response().as(Spartan.class);
 
+        //verify names are matching
         assertThat(spartanGet.getName(),is(spartanPost.getName()));
 
 
