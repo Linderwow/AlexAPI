@@ -36,6 +36,19 @@ public class SpartanWithAuthTest  extends SpartanAuthTestBase {
                 .get("/api/spartans")
                 .then().statusCode(200).log().all();
 
+    }
+
+    @DisplayName("DELETE /spartans/{id} as editor user expect 403")
+    @Test
+    public void testEditor(){
+            given()
+                    .auth().basic("editor","editor")
+                    .and().accept(ContentType.JSON)
+                    .and().pathParam("id",40)
+            .when()
+                    .delete("/api/spartans/{id}")
+                    .then().statusCode(403).log().all();
+
 
     }
 
