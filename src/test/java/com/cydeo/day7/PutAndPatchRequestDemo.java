@@ -68,7 +68,5 @@ public class PutAndPatchRequestDemo extends SpartanTestBase {
         //HW
         //we can send GET Request to id number and verify status code is 404
 
-
-
     }
 }
