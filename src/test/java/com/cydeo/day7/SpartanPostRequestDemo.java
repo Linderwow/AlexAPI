@@ -1,5 +1,6 @@
 package com.cydeo.day7;
 
+import com.cydeo.pojo.Spartan;
 import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -86,6 +87,39 @@ public class SpartanPostRequestDemo extends SpartanTestBase {
 
         assertThat(response.path("success"),is(expectedMessage));
         assertThat(response.path("data.name"),is("Severus Snape"));
+        assertThat(response.path("data.gender"),is("Male"));
+        assertThat(response.path("data.phone"),is(8877445596l));
+
+        response.prettyPrint();
+    }
+
+    @DisplayName("POST a spartan Spartan class")
+    @Test
+    public void test3(){
+
+        //create one object from your pojo, send it as a JSON
+        Spartan spartan = new Spartan();
+        spartan.setName("SeverusSpartan");
+        spartan.setGender("Male");
+        spartan.setPhone(8877445596l);
+
+        System.out.println(spartan);
+
+        Response response = given().accept(ContentType.JSON).log().all() // what we are asking from api which is JSON response
+                .and()
+                .contentType(ContentType.JSON) //what we are sending to api, which is JSON request body
+                .body(spartan)
+                .when()
+                .post("/api/spartans");
+
+        //verify status code
+        assertThat(response.statusCode(),is(201));
+        assertThat(response.contentType(),is("application/json"));
+
+        String expectedMessage = "A Spartan is Born!";
+
+        assertThat(response.path("success"),is(expectedMessage));
+        assertThat(response.path("data.name"),is("SeverusSpartan"));
         assertThat(response.path("data.gender"),is("Male"));
         assertThat(response.path("data.phone"),is(8877445596l));
 
