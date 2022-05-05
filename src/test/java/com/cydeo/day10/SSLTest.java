@@ -9,7 +9,7 @@ public class SSLTest {
 
         @Test
         public void test1(){
-
+            given().relaxedHTTPSValidation().
             when()
                     .get("https://untrusted-root.badssl.com/")
                     .prettyPrint();
