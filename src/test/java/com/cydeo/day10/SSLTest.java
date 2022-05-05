@@ -9,9 +9,19 @@ public class SSLTest {
 
         @Test
         public void test1(){
+
             when()
                     .get("https://untrusted-root.badssl.com/")
                     .prettyPrint();
+        }
+
+
+        @Test
+        public void test2(){
+
+            given().keyStore("","")
+                    .when().get("url");
+
         }
 
 
