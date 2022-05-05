@@ -32,6 +32,16 @@ public class FormulaOneXmlTest {
         //get given name
         String givenName = xmlPath.getString("MRData.DriverTable.Driver.GivenName");
         System.out.println("givenName = " + givenName);
+        //get family name
+        String familyName = xmlPath.getString("MRData.DriverTable.Driver.FamilyName");
+        System.out.println("familyName = " + familyName);
+        //how to get attribute value from xml response
+        String driverId = xmlPath.getString("MRData.DriverTable.Driver.@driverId");
+        System.out.println("driverId = " + driverId);
+
+        String code = xmlPath.getString("MRData.DriverTable.Driver.@code");
+        System.out.println("code = " + code);
+
     }
 
 
