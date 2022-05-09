@@ -1,5 +1,7 @@
 package com.cydeo.day12;
 
+import com.cydeo.utilities.BookitTestBase;
+import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -7,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
 
 
-public class BookitSpecTest {
+public class BookitSpecTest extends BookitTestBase {
 
 
     @Test
@@ -16,8 +18,11 @@ public class BookitSpecTest {
         //verify status code and content type
         given()
                 .spec(teacherReqSpec)
-                .when().get()
-                .then().spec(responseSpec);
+        .when()
+                .get("/api/users/me")
+        .then()
+                .spec(responseSpec);
+
 
     }
 
@@ -25,10 +30,10 @@ public class BookitSpecTest {
     public void test2(){
         //send a get request to /api/users/me as a student-member
         //verify status code and content type
-        given()
-                .spec(studentReqSpec)
-                .when().get()
-                .then().spec(responseSpec);
+//        given()
+//                .spec(studentReqSpec)
+//                .when().get()
+//                .then().spec(responseSpec);
 
     }
 }
