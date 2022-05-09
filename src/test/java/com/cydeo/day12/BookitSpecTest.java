@@ -30,10 +30,11 @@ public class BookitSpecTest extends BookitTestBase {
     public void test2(){
         //send a get request to /api/users/me as a student-member
         //verify status code and content type
-//        given()
-//                .spec(studentReqSpec)
-//                .when().get()
-//                .then().spec(responseSpec);
+        given()
+                .spec(userReqSpec("student-member"))
+        .when().get("/api/users/me")
+                .then()
+                        .spec(dynamicResponseSpec(200));
 
     }
 }

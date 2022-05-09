@@ -16,6 +16,7 @@ public class BookitTestBase {
 
     public static RequestSpecification teacherReqSpec;
     public static ResponseSpecification responseSpec;
+    public static RequestSpecification studentMemberReqSpec;
     @BeforeAll
     public static void init(){
         baseURI = ConfigurationReader.getProperty("base_url");
@@ -25,10 +26,36 @@ public class BookitTestBase {
                 .accept(ContentType.JSON)
                 .log().all();
 
+        studentMemberReqSpec = given()
+                .header("Authorization",getTokenByRole("student-member"))
+                .accept(ContentType.JSON)
+                .log().all();
+
+
         responseSpec = expect().statusCode(200)
                         .and()
-                         .contentType(ContentType.JSON);
+                         .contentType(ContentType.JSON)
+                        .logDetail(LogDetail.ALL);
     }
+
+    //can we create a method that is returning RequestSpec based on the role we provided ?
+        public static RequestSpecification userReqSpec(String role){
+
+            return given()
+                    .header("Authorization",getTokenByRole(role))
+                    .accept(ContentType.JSON)
+                    .log().all();
+
+        }
+
+        public static ResponseSpecification dynamicResponseSpec(int statusCode){
+            return expect().statusCode(statusCode)
+                    .and()
+                    .contentType(ContentType.JSON)
+                    .logDetail(LogDetail.ALL);
+
+        }
+
     //create a method that returns Bearer+token based on provided role
     //teacher,student-member,student-leader
     //it will take info from configuration properties
