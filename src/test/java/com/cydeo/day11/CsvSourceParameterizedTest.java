@@ -1,9 +1,14 @@
 package com.cydeo.day11;
 
+import io.restassured.http.ContentType;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.*;
 
 public class CsvSourceParameterizedTest {
 
@@ -41,5 +46,44 @@ public class CsvSourceParameterizedTest {
      */
     //verify place name contains your city name
     //print number of places for each request
+
+    @ParameterizedTest
+    @CsvSource({ "NY, New York",
+            "CO, Denver",
+            "VA, Fairfax",
+            "VA, Arlington",
+            "MA, Boston",
+            "NY, New York",
+            "MD, Annapolis"})
+    public void zipCodeTest(String state,String city){
+
+        System.out.println("state = " + state);
+        System.out.println("city = " + city);
+
+        int placeNumber = given()
+                .baseUri("https://api.zippopotam.us")
+                .accept(ContentType.JSON)
+                .pathParam("state",state)
+                .and()
+                .pathParam("city",city)
+                .when().get("/us/{state}/{city}")
+                .then()
+                .statusCode(200)
+                .and()
+                .body("places.'place name'",everyItem(containsStringIgnoringCase(city)))
+                .extract().jsonPath().getList("places").size();
+
+        System.out.println("placeNumber = " + placeNumber);
+
+
+
+
+
+
+
+    }
+
+
+
 
 }
