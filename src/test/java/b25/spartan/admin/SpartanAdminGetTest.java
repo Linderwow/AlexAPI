@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static net.serenitybdd.rest.SerenityRest.given;
+import static net.serenitybdd.rest.SerenityRest.lastResponse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -46,6 +47,13 @@ public class SpartanAdminGetTest {
                     .when()
                     .get("/api/spartans/{id}");
 
+        //if you send a request using serenityRest, the response object
+        //can be obtained from the method called lastResponse() without being saved separately
+        //same with Response response object
+
+        System.out.println("lastResponse().statusCode() = " + lastResponse().statusCode());
+
+        System.out.println("lastResponse().path(\"id\") = " + lastResponse().path("id"));
 
 
     }
