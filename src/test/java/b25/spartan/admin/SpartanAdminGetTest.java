@@ -55,6 +55,7 @@ public class SpartanAdminGetTest {
 
         System.out.println("lastResponse().path(\"id\") = " + lastResponse().path("id"));
 
+        System.out.println(lastResponse().jsonPath().getString("name"));
 
     }
 
