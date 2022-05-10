@@ -10,4 +10,5 @@ public class PropertiesTest {
         System.out.println(ConfigReader.getProperty("spartan.editor.username"));
         System.out.println(ConfigReader.getProperty("serenity.project.name"));
     }
+
 }
