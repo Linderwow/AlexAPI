@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import net.serenitybdd.junit5.SerenityTest;
 import net.serenitybdd.rest.Ensure;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static net.serenitybdd.rest.SerenityRest.given;
@@ -23,6 +24,7 @@ public class SpartanAdminGetTest {
         RestAssured.baseURI ="http://44.201.121.105:7000";
     }
 
+    @Disabled
     @Test
     public void getAllSpartan(){
             given()
@@ -36,6 +38,7 @@ public class SpartanAdminGetTest {
                     .and()
                     .contentType(ContentType.JSON);
     }
+
 
     @Test
     public void getOneSpartan(){
