@@ -6,9 +6,10 @@ import net.serenitybdd.junit5.SerenityTest;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static net.serenitybdd.rest.SerenityRest.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static io.restassured.RestAssured.*;
+
 
 
 @SerenityTest
@@ -32,6 +33,21 @@ public class SpartanAdminGetTest {
                     .statusCode(200)
                     .and()
                     .contentType(ContentType.JSON);
+    }
+
+    @Test
+    public void getOneSpartan(){
+
+            given()
+                    .accept(ContentType.JSON)
+                    .and()
+                    .auth().basic("admin","admin")
+                    .pathParam("id",8)
+                    .when()
+                    .get("/api/spartans/{id}");
+
+
+
     }
 
 
