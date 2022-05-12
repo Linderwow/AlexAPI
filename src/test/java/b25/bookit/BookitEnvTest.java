@@ -1,9 +1,12 @@
 package b25.bookit;
 
 import net.serenitybdd.junit5.SerenityTest;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import utilities.ConfigReader;
 
+
+@Disabled
 @SerenityTest
 public class BookitEnvTest {
 

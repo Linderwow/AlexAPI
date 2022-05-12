@@ -1,12 +1,12 @@
 package b25.spartan.editor;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import utilities.SpartanNewBase;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import net.serenitybdd.junit5.SerenityTest;
 import net.serenitybdd.rest.Ensure;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import utilities.SpartanUtil;
@@ -18,11 +18,11 @@ import static net.serenitybdd.rest.SerenityRest.lastResponse;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-@Disabled
+
 @SerenityTest
 public class SpartanEditorPostTest extends SpartanNewBase {
 
-
+    @Disabled
     @DisplayName("Editor should be able to POST")
     @Test
     public void postSpartanAsEditor(){
@@ -82,6 +82,18 @@ public class SpartanEditorPostTest extends SpartanNewBase {
         Ensure.that("check location header ends with newly generated id",
                     vR -> vR.header("Location",endsWith(id))
                 );
+
+    }
+
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/SpartanDataPOST.csv",numLinesToSkip = 1)
+    public void postSpartanWithCsvFile(String nameArg,String gender,long phone){
+        System.out.println("nameArg = " + nameArg);
+        System.out.println("gender = " + gender);
+        System.out.println("phone = " + phone);
+
+
 
     }
 
