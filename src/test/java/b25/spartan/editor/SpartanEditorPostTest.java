@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import utilities.SpartanUtil;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static net.serenitybdd.rest.SerenityRest.given;
@@ -97,6 +98,33 @@ public class SpartanEditorPostTest extends SpartanNewBase {
         System.out.println("nameArg = " + nameArg);
         System.out.println("gender = " + gender);
         System.out.println("phone = " + phone);
+
+        Map<String,Object> spartanMap = new LinkedHashMap<>();
+        spartanMap.put("name",nameArg);
+        spartanMap.put("gender",gender);
+        spartanMap.put("phone",phone);
+
+        //send a post request as editor
+        given()
+                .auth().basic("editor","editor")
+                .and()
+                .accept(ContentType.JSON)
+                .contentType(ContentType.JSON)
+                .body(spartanMap)
+                .log().body()
+                .when()
+                .post("/spartans")
+                .then().log().all();
+
+
+        //status code is 201
+        Ensure.that("Status code is 201", x -> x.statusCode(201));
+
+        //content type is Json
+        Ensure.that("Content-type is JSON", vR -> vR.contentType(ContentType.JSON));
+
+        //A Spartan is Born!
+        Ensure.that("success message is correct", vR -> vR.body("success",is("A Spartan is Born!")));
 
 
     }
