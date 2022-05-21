@@ -92,7 +92,7 @@ public class SpartanEditorPostTest extends SpartanNewBase {
         we can use {index} and for using parameter values we use order of parameter index
         just like {0} - name {1} -gender {2} - phone.
      */
-    @ParameterizedTest(name = "POST Spartan {index} - name: {0}")
+    @ParameterizedTest(name = "POST Spartan {index} - name - {0}")
     @CsvFileSource(resources = "/SpartanDataPOST.csv",numLinesToSkip = 1)
     public void postSpartanWithCsvFile(String nameArg,String gender,long phone){
         System.out.println("nameArg = " + nameArg);

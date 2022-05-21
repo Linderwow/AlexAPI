@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b2c53c14-9c5f-45c2-b618-7214065d1850" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/b25/spartan/editor/SpartanEditorPostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b25/spartan/editor/SpartanEditorPostTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="lpu8dyyq" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="28yfUDkNjUonhZY06hLUm6Oadeh" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../B25-RestAssured" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+  </component>
+  <component name="RunManager" selected="JUnit.SpartanEditorPostTest.postSpartanWithCsvFile">
+    <configuration name="PropertiesTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="B25SerenityProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="b25.spartan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="b25.spartan" />
+      <option name="MAIN_CLASS_NAME" value="b25.spartan.PropertiesTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpartanAdminGetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="B25SerenityProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="b25.spartan.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="b25.spartan.admin" />
+      <option name="MAIN_CLASS_NAME" value="b25.spartan.admin.SpartanAdminGetTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpartanEditorPostTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="B25SerenityProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="b25.spartan.editor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="b25.spartan.editor" />
+      <option name="MAIN_CLASS_NAME" value="b25.spartan.editor.SpartanEditorPostTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpartanEditorPostTest.postSpartanAsEditor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="B25SerenityProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="b25.spartan.editor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="b25.spartan.editor" />
+      <option name="MAIN_CLASS_NAME" value="b25.spartan.editor.SpartanEditorPostTest" />
+      <option name="METHOD_NAME" value="postSpartanAsEditor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpartanEditorPostTest.postSpartanWithCsvFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="B25SerenityProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="b25.spartan.editor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="b25.spartan.editor" />
+      <option name="MAIN_CLASS_NAME" value="b25.spartan.editor.SpartanEditorPostTest" />
+      <option name="METHOD_NAME" value="postSpartanWithCsvFile(java.lang.String,java.lang.String,long)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SpartanEditorPostTest.postSpartanWithCsvFile" />
+        <item itemvalue="JUnit.SpartanAdminGetTest" />
+        <item itemvalue="JUnit.SpartanEditorPostTest" />
+        <item itemvalue="JUnit.SpartanEditorPostTest.postSpartanAsEditor" />
+        <item itemvalue="JUnit.PropertiesTest.test1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2c53c14-9c5f-45c2-b618-7214065d1850" name="Changes" comment="" />
+      <created>1652193760114</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652193760114</updated>
+      <workItem from="1652193761398" duration="350000" />
+      <workItem from="1652194151843" duration="1998000" />
+      <workItem from="1652196176832" duration="80000" />
+      <workItem from="1652196266694" duration="91000" />
+      <workItem from="1652196369135" duration="746000" />
+      <workItem from="1652197132124" duration="256000" />
+      <workItem from="1652197399487" duration="1094000" />
+      <workItem from="1652198512546" duration="23000" />
+      <workItem from="1652198545408" duration="3370000" />
+      <workItem from="1652202183775" duration="1070000" />
+      <workItem from="1652367807150" duration="4970000" />
+      <workItem from="1652631545509" duration="615000" />
+      <workItem from="1652750651583" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/b25/spartan/admin/SpartanAdminGetTest.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/b25/spartan/editor/SpartanEditorPostTest.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/b25/spartan/PropertiesTest.java</url>
+          <line>8</line>
+          <properties class="b25.spartan.PropertiesTest" method="test1">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
